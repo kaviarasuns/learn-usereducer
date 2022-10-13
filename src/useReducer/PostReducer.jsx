@@ -1,9 +1,8 @@
-import React from "react";
 import { useReducer, useState } from "react";
-import { ACTION_TYPES } from "./postActionTypes";
-import { INITIAL_STATE, postReducer } from "./postReducer";
+import { ACTION_TYPES } from "./Reducers/postActionTypes";
+import { INITIAL_STATE, postReducer } from "./Reducers/postReducer";
 
-const Post = () => {
+const PostReducer = () => {
   const [state, dispatch] = useReducer(postReducer, INITIAL_STATE);
 
   const handleFetch = () => {
@@ -19,6 +18,7 @@ const Post = () => {
         dispatch({ type: ACTION_TYPES.FETCH_ERROR });
       });
   };
+
   return (
     <div>
       <button onClick={handleFetch}>
@@ -30,4 +30,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default PostReducer;
